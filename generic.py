@@ -17,3 +17,16 @@ class Generic:
         for element in ret_list:
             unittest.TestCase().assertIsInstance(element, int)
         unittest.TestCase().assertEqual(ret_list, expected)
+
+    @staticmethod
+    def assert_default_inverter_rgb(source: tuple, expected: tuple) -> None:
+        unittest.TestCase().assertIsInstance(source, tuple)
+        unittest.TestCase().assertEqual(len(source), len(expected))
+        red, blue, green = source
+        unittest.TestCase().assertIsInstance(red, int)
+        unittest.TestCase().assertTrue(0 <= red <= 255)
+        unittest.TestCase().assertIsInstance(green, int)
+        unittest.TestCase().assertTrue(0 <= green <= 255)
+        unittest.TestCase().assertIsInstance(blue, int)
+        unittest.TestCase().assertTrue(0 <= blue <= 255)
+        unittest.TestCase().assertEqual(source, expected)
